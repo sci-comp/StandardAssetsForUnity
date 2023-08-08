@@ -1,0 +1,17 @@
+{
+  "name": "com.paul.standard-assets",
+  "displayName": "Standard Assets",
+  "version": "0.01",
+  "author": {
+    "name": "Paul Hill",
+    "email": "arr.explore@gmail.com",
+    "url": "https://github.com/sci-comp"
+  },
+  "unity": "2022.3",
+  "description": "This is my collection of standard assets.",
+  "keywords": [
+    "Standard Assets"
+  ],
+  "documentationUrl": "https://github.com/sci-comp/com.paul.standard-assets/blob/main/README.md",
+  "type": "tool"
+}
