@@ -17,6 +17,10 @@ Packages from the Unity repository,
 - Cinemachine
 - Input System
 
+Packages from my git repo,
+
+- Third Person RPG Input [link](https://github.com/sci-comp/com.paul.third-person-rpg-input)
+
 Dependencies are not included since they are licensed to their respective owners. Please obtain dependencies from the links listed below before installing this package.
 
 Third party dependencies from the Unity AssetStore,
