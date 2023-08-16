@@ -5,7 +5,8 @@ using UnityEngine;
 namespace Toolbox
 {
     /// <summary>
-    /// Manages a fixed pool of GameObjects. 
+    /// Manages a pool of GameObjects.
+    /// 
     /// Objects are stored as inactive when not in use and can be activated when requested. 
     /// Supports a maximum lifetime for objects, automatically deactivating them when 
     /// they reach the given lifetime.
@@ -15,8 +16,8 @@ namespace Toolbox
         [SerializeField] private GameObject[] objectPool;
         [SerializeField] private float maximumLifetime;
 
-        private Dictionary<GameObject, float> activeObjects = new();
-        private List<GameObject> inactiveObjects = new();
+        private readonly Dictionary<GameObject, float> activeObjects = new();
+        private readonly List<GameObject> inactiveObjects = new();
 
         private void Start()
         {
