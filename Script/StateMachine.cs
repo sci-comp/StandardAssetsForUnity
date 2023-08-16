@@ -4,9 +4,10 @@ using System.Collections.Generic;
 namespace Toolbox
 {
 	/// <summary>
-	/// Represents a basic state machine that holds and manages states of type T. 
-	/// Allows for state changes and invokes an event whenever a state change occurs. 
-	/// Provides properties for accessing the current and previous states.
+	/// A basic state machine that holds and manages states of type T. 
+	/// 
+	/// Invokes an event whenever a state change occurs and provides properties for 
+	/// accessing the current and previous states.
 	/// </summary>
     public class StateMachine<T>
 	{

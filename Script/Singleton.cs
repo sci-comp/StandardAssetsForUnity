@@ -3,9 +3,9 @@ using UnityEngine;
 namespace Toolbox
 {
     /// <summary>
-    /// Provides a generic Singleton implementation for MonoBehaviour classes. 
-    /// Ensures that only one instance of the component is available in the scene, 
-    /// creating a new instance if necessary and destroying duplicate instances.
+    /// A generic Singleton implementation for MonoBehaviour classes that makes use of 
+    /// DontDetroyOnLoad. Ensures that only one instance of the component is available 
+    /// in the scene, creating a new instance if necessary and destroying duplicate instances.
     /// </summary>
     public class Singleton<T> : MonoBehaviour where T : Component
     {
