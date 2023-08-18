@@ -188,7 +188,8 @@ MonoBehaviour:
     traxAO: {fileID: 0}
     traxAOChannel: 1
     splat: {fileID: 0}
-  - terrainLayer: {fileID: 0}
+  - terrainLayer: {fileID: 8574412962073106934, guid: 13415c98d64191940b66d86076a4040e,
+      type: 2}
     diffuse: {fileID: 2800000, guid: 8bf9830049a876f479ad630556530931, type: 3}
     height: {fileID: 0}
     heightChannel: 1
