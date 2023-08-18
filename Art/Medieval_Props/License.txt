@@ -1,0 +1,22 @@
+Public Domain
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Originally hosted on Open Game Art
+https://opengameart.org/content/medieval-tavern-props-pack
+
+The original README message follows,
+
+----
+
+Pack of 19 props that I made for my game.
+
+They are all in range 12-374 tris and textures 256x256 - 1024x1024 png.
+
+All are packed inside single blend file.
+
+Hope you find them useful ;)
+
+Copyright/Attribution Notice: 
+You don't need to credit me, but if you like you can mention me as System G6 or Qoma.
+
+----
