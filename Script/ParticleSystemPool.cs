@@ -31,7 +31,7 @@ namespace Toolbox
 
             ParticleSystem systemToUse = particleSystemsQueue.Dequeue();
 
-            if (systemToUse.gameObject.activeSelf)
+            if (systemToUse.isPlaying)
             {
                 systemToUse.Stop();
                 systemToUse.Clear();
