@@ -184,7 +184,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: VFX_Candleflame
+  m_text: Temporary Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6f0d2f800520e6f44b9d4c7febe69992, type: 2}
   m_sharedMaterial: {fileID: -2167981695572285114, guid: 6f0d2f800520e6f44b9d4c7febe69992,
