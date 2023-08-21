@@ -2,11 +2,10 @@
 
 ## Introduction
 
-These are standard assets that I include in most of my projects. Although others may see this project as a sort of bag of clutter, I find these assets to be very useful.
+These are standard assets that I include in most of my projects. Though this package was put together with a third person RPG in mind, it could be helpful for other genres as well.
 
-Though this package was put together with a third person RPG in mind, it could be helpful for other genres as well.
+This package is under the MIT license (with some content originally from the public domain). This license was chosen so that you can grab what you need with the least amount of hassle possible.
 
-This package is under the MIT license (with some content original from the public domain). This license was chosen so that you can grab what you need with the least amount of hassle possible. Original licenses are included in relevant subdirectories, simply search the project for "License".
 
 ## Dependencies
 
@@ -16,6 +15,7 @@ A Texture Array Configuration and material for MicroSplat is included, though yo
 - MicroSplat URP 2022 [link](https://assetstore.unity.com/packages/tools/terrain/microsplat-urp-2022-support-244845)
 
 If you do not want to use this dependency, simply delete the included MicroSplat folder, then replace the demo terrain's material with your favorite shader.
+
 
 ## Scenes
 

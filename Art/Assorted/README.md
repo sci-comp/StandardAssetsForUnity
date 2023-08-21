@@ -1,0 +1,1 @@
+Each folder in this directory contains a License file with information about the art included.
