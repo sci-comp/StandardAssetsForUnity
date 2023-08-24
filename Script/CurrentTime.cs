@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using UnityEngine;
 
 namespace Toolbox
@@ -25,13 +26,22 @@ namespace Toolbox
         public Action OnDay;
         public Action OnSunrise;
         public Action OnSunset;
+        public Action OnMinutePassed;
+        public Action OnHourPassed;
+        public Action OnDayPassed;
+        public Action OnWeekPassed;
 
-        private float nextTickTime;
         private bool isNight, isDay, isSunrise, isSunset;
-
+        private int previousMinute, previousHour, previousDay, previousWeek;
+        private float nextTickTime;
+        
         private void Start()
         {
             nextTickTime = ElapsedTime + tickTimeStep;
+            previousMinute = CurrentDateTime.Minute;
+            previousHour = CurrentDateTime.Hour;
+            previousDay = CurrentDateTime.Day;
+            previousWeek = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(CurrentDateTime, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
         }
 
         private void Update()
@@ -54,6 +64,8 @@ namespace Toolbox
             }
 
             CheckPhases();
+            CheckTimeEvents();
+
         }
 
         private void CheckPhases()
@@ -83,12 +95,32 @@ namespace Toolbox
             }
         }
 
-        public void SetGameTime(DateTime dateTime)
+        private void CheckTimeEvents()
         {
-            CurrentDateTime = dateTime;
-            ElapsedTime = dateTime.Hour * 3600 + dateTime.Minute * 60 + dateTime.Second;
-            TimeOfDay = ElapsedTime / 3600 % 24;
-            ResetPhaseFlags();
+            if (CurrentDateTime.Minute != previousMinute)
+            {
+                OnMinutePassed?.Invoke();
+                previousMinute = CurrentDateTime.Minute;
+            }
+
+            if (CurrentDateTime.Hour != previousHour)
+            {
+                OnHourPassed?.Invoke();
+                previousHour = CurrentDateTime.Hour;
+            }
+
+            if (CurrentDateTime.Day != previousDay)
+            {
+                OnDayPassed?.Invoke();
+                previousDay = CurrentDateTime.Day;
+            }
+
+            int currentWeek = CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(CurrentDateTime, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+            if (currentWeek != previousWeek)
+            {
+                OnWeekPassed?.Invoke();
+                previousWeek = currentWeek;
+            }
         }
 
         private void ResetPhaseFlags()
@@ -97,6 +129,14 @@ namespace Toolbox
             isDay = false;
             isSunrise = false;
             isSunset = false;
+        }
+
+        public void SetGameTime(DateTime dateTime)
+        {
+            CurrentDateTime = dateTime;
+            ElapsedTime = dateTime.Hour * 3600 + dateTime.Minute * 60 + dateTime.Second;
+            TimeOfDay = ElapsedTime / 3600 % 24;
+            ResetPhaseFlags();
         }
     }
 }
