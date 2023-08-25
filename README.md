@@ -4,9 +4,6 @@
 
 These are standard assets that I include in most of my projects. Though this package was put together with a third person RPG in mind, it could be helpful for other genres as well.
 
-This package is under the MIT license (with some content originally from the public domain). This license was chosen so that you can grab what you need with the least amount of hassle possible.
-
-
 ### Required Dependency
 
 #### Unity Tweens
@@ -47,3 +44,9 @@ There's not much to the demo scene, yet. This may be removed.
 An overview of included art.
 
 ![Layout](./Documentation/Image/Layout.png)
+
+## License
+
+Two fonts are included that were licensed with the Open Font License and Apache License respectively. Please see Art/Font for the necessary licenses.
+
+All other contents in this package fall under the MIT license (with some content originally from the public domain). This license was chosen so that you can grab what you need with the least amount of hassle possible.

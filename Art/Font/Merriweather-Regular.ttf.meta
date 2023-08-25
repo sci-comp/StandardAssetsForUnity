@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aa9a1fd9deb27b041b7fa86aebf43ed4
+guid: ed708e35f0737554fbc8b1a7c52037a5
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,9 +9,9 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Fixed
+  - Merriweather
   fallbackFontReferences:
-  - {fileID: 12800000, guid: 0372d0542a87dfb49a16ab579f70551d, type: 3}
+  - {fileID: 12800000, guid: 8b6be9ab19c5be74b84df1425da13ef2, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
