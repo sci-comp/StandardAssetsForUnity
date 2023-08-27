@@ -45,8 +45,14 @@ An overview of included art.
 
 ![Layout](./Documentation/Image/Layout.png)
 
+### Frame Manager
+
+There is a demo scene included, along with a test script, for the included frame manager.
+
+![Frame Manager](./Documentation/Image/FrameManager.png)
+
 ## License
 
-Two fonts are included that were licensed with the Open Font License and Apache License respectively. Please see Art/Font for the necessary licenses.
+Fonts are included that were licensed with the Open Font License and Apache License respectively. Please see Art/Font for the necessary licenses.
 
 All other contents in this package fall under the MIT license (with some content originally from the public domain). This license was chosen so that you can grab what you need with the least amount of hassle possible.
