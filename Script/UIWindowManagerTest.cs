@@ -9,9 +9,9 @@ public class UIFrameManagerTest : MonoBehaviour
     [SerializeField] Button btnShowFrame02 = null;
     [SerializeField] Button btnShowFrame03 = null;
 
-    [SerializeField] UIFrame frame01 = null;
-    [SerializeField] UIFrame frame02 = null;
-    [SerializeField] UIFrame frame03 = null;
+    [SerializeField] UIWindow frame01 = null;
+    [SerializeField] UIWindow frame02 = null;
+    [SerializeField] UIWindow frame03 = null;
 
     private void Start()
     {
@@ -24,21 +24,21 @@ public class UIFrameManagerTest : MonoBehaviour
     {
         SetButtonsInactive();
         frame01.gameObject.SetActive(true);
-        frame01.EnableFrame();
+        frame01.EnableWindow();
     }
 
     private void ButtonShowFrame02()
     {
         SetButtonsInactive();
         frame02.gameObject.SetActive(true);
-        frame02.EnableFrame();
+        frame02.EnableWindow();
     }
 
     private void ButtonShowFrame03()
     {
         SetButtonsInactive();
         frame03.gameObject.SetActive(true);
-        frame03.EnableFrame();
+        frame03.EnableWindow();
     }
 
     private void SetButtonsInactive()

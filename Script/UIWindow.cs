@@ -6,27 +6,27 @@ using UnityEngine.UI;
 using Sirenix.OdinInspector;
 
 [RequireComponent(typeof(CanvasGroup), typeof(Animator))]
-public class UIFrame : MonoBehaviour
+public class UIWindow : MonoBehaviour
 {
     [SerializeField] bool startOpen = false;
     [SerializeField] bool hasACloseButton = true;
     [ShowIf("hasACloseButton"), SerializeField] Button closeButton = null;
     [SerializeField] float fadeDuration = 0.25f;
-    [SerializeField] string panelName = "Temporary Panel Name";
+    [SerializeField] string windowName = "Temporary Panel Name";
     [SerializeField] string animatorTriggerOpen = "Open";
     [SerializeField] string animatorTriggerClose = "Close";
     [SerializeField] Selectable firstSelected;
-    [SerializeField] UIFrameManager canvasManager;
+    [SerializeField] UIWindowManager canvasManager;
     
     private int enableAnimatorHash;
     private int disableAnimatorHash;
     private Animator animator;
     private CanvasGroup canvasGroup;
     private EventSystem eventSystem;
-    private Selectable lastSelected;
+    public Selectable LastSelected { get; set; }
 
     public bool AlreadyStarted { get; set; } = false;
-    public string PanelName => panelName;
+    public string WindowName => windowName;
     public List<GameObject> SelectableGameObjects { get; set; } = new();
     public List<Selectable> Selectables { get; set; } = new();
 
@@ -56,32 +56,44 @@ public class UIFrame : MonoBehaviour
 
         RefreshSelectables();
 
-        lastSelected = firstSelected != null ? firstSelected : Selectables[0];
+        LastSelected = firstSelected != null ? firstSelected : Selectables[0];
 
         if (startOpen)
         {
-            EnableFrame();
+            EnableWindow();
         }
         else if (!startOpen && !AlreadyStarted)
         {
-            Debug.Log("Start disable");
             animator.SetTrigger(disableAnimatorHash);
             canvasGroup.interactable = false;
             gameObject.SetActive(false);
         }
     }
 
-    private void Update()
+    public void Focus()
     {
-        if (eventSystem.currentSelectedGameObject != null)
+        if (LastSelected != null)
         {
-            lastSelected = eventSystem.currentSelectedGameObject.GetComponent<Selectable>();
+            eventSystem.SetSelectedGameObject(LastSelected.gameObject);
         }
-    }
+        else if (firstSelected != null)
+        {
+            eventSystem.SetSelectedGameObject(firstSelected.gameObject);
+        }
+        else
+        {
+            RefreshSelectables();
 
-    private void OnCloseButtonClicked()
-    {
-        DisableFrame();
+            if (Selectables.Count > 0)
+            {
+                eventSystem.SetSelectedGameObject(Selectables[0].gameObject);
+            }
+            else
+            {
+                // Nothing can be selected
+                eventSystem.SetSelectedGameObject(null);
+            }
+        }
     }
 
     public void RefreshSelectables()
@@ -101,12 +113,14 @@ public class UIFrame : MonoBehaviour
         }
     }
 
-    public void EnableFrame()
+    #region Enable/Disable
+
+    public void EnableWindow()
     {
         StartCoroutine(EnableAfterFadeIn());
     }
 
-    public void DisableFrame()
+    public void DisableWindow()
     {
         StartCoroutine(DisableAfterFadeOut());
     }
@@ -115,7 +129,7 @@ public class UIFrame : MonoBehaviour
     {
         animator.SetTrigger(enableAnimatorHash);
         yield return new WaitForSeconds(fadeDuration);
-        canvasManager.RegisterFrame(this);
+        canvasManager.RegisterWindow(this);
     }
 
     private IEnumerator DisableAfterFadeOut()
@@ -123,33 +137,16 @@ public class UIFrame : MonoBehaviour
         animator.SetTrigger(disableAnimatorHash);
         canvasGroup.interactable = false;
         yield return new WaitForSeconds(fadeDuration);
-        canvasManager.UnregisterFrame(this);
+        canvasManager.UnregisterWindow(this);
         gameObject.SetActive(false);
     }
 
-    public void Focus()
+    private void OnCloseButtonClicked()
     {
-        if (lastSelected != null)
-        {
-            eventSystem.SetSelectedGameObject(lastSelected.gameObject);
-        }
-        else if (firstSelected != null)
-        {
-            eventSystem.SetSelectedGameObject(firstSelected.gameObject);
-        }
-        else
-        {
-            RefreshSelectables();
-            if (Selectables.Count > 0)
-            {
-                eventSystem.SetSelectedGameObject(Selectables[0].gameObject);
-            }
-            else
-            {
-                // Nothing can be selected
-                eventSystem.SetSelectedGameObject(null);
-            }
-        }
+        DisableWindow();
     }
+
+    #endregion
+
 }
 
