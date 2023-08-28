@@ -8,33 +8,36 @@ using Sirenix.OdinInspector;
 [RequireComponent(typeof(CanvasGroup), typeof(Animator))]
 public class UIWindow : MonoBehaviour
 {
+    [Title("UI Window", "Base class", TitleAlignments.Centered)]
+    [SerializeField] string windowName = "Temporary Window Name";
     [SerializeField] bool startOpen = false;
     [SerializeField] bool hasACloseButton = true;
     [ShowIf("hasACloseButton"), SerializeField] Button closeButton = null;
+    [SerializeField] Selectable firstSelected;
+    [SerializeField] UIWindowManager windowManager;
+
+    [Header("Animator")]
     [SerializeField] float fadeDuration = 0.25f;
-    [SerializeField] string windowName = "Temporary Panel Name";
     [SerializeField] string animatorTriggerOpen = "Open";
     [SerializeField] string animatorTriggerClose = "Close";
-    [SerializeField] Selectable firstSelected;
-    [SerializeField] UIWindowManager canvasManager;
-    
+
     private int enableAnimatorHash;
     private int disableAnimatorHash;
     private Animator animator;
     private CanvasGroup canvasGroup;
     private EventSystem eventSystem;
-    public Selectable LastSelected { get; set; }
-
-    public bool AlreadyStarted { get; set; } = false;
-    public string WindowName => windowName;
-    public List<GameObject> SelectableGameObjects { get; set; } = new();
-    public List<Selectable> Selectables { get; set; } = new();
 
     public bool Interactable
     {
         get { return canvasGroup.interactable; }
         set { canvasGroup.interactable = value; }
     }
+
+    public bool AlreadyStarted { get; set; } = false;
+    public string WindowName => windowName;
+    public List<GameObject> SelectableGameObjects { get; set; } = new();
+    public List<Selectable> Selectables { get; set; } = new();
+    public Selectable LastSelected { get; set; }
 
     private void Awake()
     {
@@ -43,16 +46,16 @@ public class UIWindow : MonoBehaviour
 
         animator = GetComponent<Animator>();
         canvasGroup = GetComponent<CanvasGroup>();
-    }
-
-    private void Start()
-    {
-        eventSystem = EventSystem.current;
 
         if (hasACloseButton && closeButton != null)
         {
             closeButton.onClick.AddListener(OnCloseButtonClicked);
         }
+    }
+
+    virtual protected void Start()
+    {
+        eventSystem = EventSystem.current;
 
         RefreshSelectables();
 
@@ -129,7 +132,7 @@ public class UIWindow : MonoBehaviour
     {
         animator.SetTrigger(enableAnimatorHash);
         yield return new WaitForSeconds(fadeDuration);
-        canvasManager.RegisterWindow(this);
+        windowManager.RegisterWindow(this);
     }
 
     private IEnumerator DisableAfterFadeOut()
@@ -137,7 +140,7 @@ public class UIWindow : MonoBehaviour
         animator.SetTrigger(disableAnimatorHash);
         canvasGroup.interactable = false;
         yield return new WaitForSeconds(fadeDuration);
-        canvasManager.UnregisterWindow(this);
+        windowManager.UnregisterWindow(this);
         gameObject.SetActive(false);
     }
 
