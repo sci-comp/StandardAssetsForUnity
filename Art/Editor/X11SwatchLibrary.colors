@@ -1,0 +1,295 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12323, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: X11SwatchLibrary
+  m_EditorClassIdentifier: 
+  m_Presets:
+  - m_Name: Black
+    m_Color: {r: 0, g: 0, b: 0, a: 1}
+  - m_Name: DimGray
+    m_Color: {r: 0.4117647, g: 0.4117647, b: 0.4117647, a: 1}
+  - m_Name: Gray
+    m_Color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+  - m_Name: DarkGray
+    m_Color: {r: 0.6627451, g: 0.6627451, b: 0.6627451, a: 1}
+  - m_Name: Silver
+    m_Color: {r: 0.7529412, g: 0.7529412, b: 0.7529412, a: 1}
+  - m_Name: LightGray
+    m_Color: {r: 0.827451, g: 0.827451, b: 0.827451, a: 1}
+  - m_Name: Gainsboro
+    m_Color: {r: 0.8627451, g: 0.8627451, b: 0.8627451, a: 1}
+  - m_Name: WhiteSmoke
+    m_Color: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+  - m_Name: White
+    m_Color: {r: 1, g: 1, b: 1, a: 1}
+  - m_Name: RosyBrown
+    m_Color: {r: 0.7372549, g: 0.56078434, b: 0.56078434, a: 1}
+  - m_Name: IndianRed
+    m_Color: {r: 0.8039216, g: 0.36078432, b: 0.36078432, a: 1}
+  - m_Name: Brown
+    m_Color: {r: 0.64705884, g: 0.16470589, b: 0.16470589, a: 1}
+  - m_Name: FireBrick
+    m_Color: {r: 0.69803923, g: 0.13333334, b: 0.13333334, a: 1}
+  - m_Name: LightCoral
+    m_Color: {r: 0.9411765, g: 0.5019608, b: 0.5019608, a: 1}
+  - m_Name: Maroon
+    m_Color: {r: 0.5019608, g: 0, b: 0, a: 1}
+  - m_Name: DarkRed
+    m_Color: {r: 0.54509807, g: 0, b: 0, a: 1}
+  - m_Name: Red
+    m_Color: {r: 1, g: 0, b: 0, a: 1}
+  - m_Name: Snow
+    m_Color: {r: 1, g: 0.98039216, b: 0.98039216, a: 1}
+  - m_Name: MistyRose
+    m_Color: {r: 1, g: 0.89411765, b: 0.88235295, a: 1}
+  - m_Name: Salmon
+    m_Color: {r: 0.98039216, g: 0.5019608, b: 0.44705883, a: 1}
+  - m_Name: Tomato
+    m_Color: {r: 1, g: 0.3882353, b: 0.2784314, a: 1}
+  - m_Name: DarkSalmon
+    m_Color: {r: 0.9137255, g: 0.5882353, b: 0.47843137, a: 1}
+  - m_Name: Coral
+    m_Color: {r: 1, g: 0.49803922, b: 0.3137255, a: 1}
+  - m_Name: Orangered
+    m_Color: {r: 1, g: 0.27058825, b: 0, a: 1}
+  - m_Name: LightSalmon
+    m_Color: {r: 1, g: 0.627451, b: 0.47843137, a: 1}
+  - m_Name: Sienna
+    m_Color: {r: 0.627451, g: 0.32156864, b: 0.1764706, a: 1}
+  - m_Name: Seashell
+    m_Color: {r: 1, g: 0.9607843, b: 0.93333334, a: 1}
+  - m_Name: Chocolate
+    m_Color: {r: 0.8235294, g: 0.4117647, b: 0.11764706, a: 1}
+  - m_Name: SaddleBrown
+    m_Color: {r: 0.54509807, g: 0.27058825, b: 0.07450981, a: 1}
+  - m_Name: SandyBrown
+    m_Color: {r: 0.95686275, g: 0.6431373, b: 0.3764706, a: 1}
+  - m_Name: PeachPuff
+    m_Color: {r: 1, g: 0.85490197, b: 0.7254902, a: 1}
+  - m_Name: Peru
+    m_Color: {r: 0.8039216, g: 0.52156866, b: 0.24705882, a: 1}
+  - m_Name: Linen
+    m_Color: {r: 0.98039216, g: 0.9411765, b: 0.9019608, a: 1}
+  - m_Name: Bisque
+    m_Color: {r: 1, g: 0.89411765, b: 0.76862746, a: 1}
+  - m_Name: DarkOrange
+    m_Color: {r: 1, g: 0.54901963, b: 0, a: 1}
+  - m_Name: Burlywood
+    m_Color: {r: 0.87058824, g: 0.72156864, b: 0.5294118, a: 1}
+  - m_Name: Tan
+    m_Color: {r: 0.8235294, g: 0.7058824, b: 0.54901963, a: 1}
+  - m_Name: AntiqueWhite
+    m_Color: {r: 0.98039216, g: 0.92156863, b: 0.84313726, a: 1}
+  - m_Name: NavajoWhite
+    m_Color: {r: 1, g: 0.87058824, b: 0.6784314, a: 1}
+  - m_Name: BlanchedAlmond
+    m_Color: {r: 1, g: 0.92156863, b: 0.8039216, a: 1}
+  - m_Name: PapayaWhip
+    m_Color: {r: 1, g: 0.9372549, b: 0.8352941, a: 1}
+  - m_Name: Moccasin
+    m_Color: {r: 1, g: 0.89411765, b: 0.70980394, a: 1}
+  - m_Name: Orange
+    m_Color: {r: 1, g: 0.64705884, b: 0, a: 1}
+  - m_Name: Wheat
+    m_Color: {r: 0.9607843, g: 0.87058824, b: 0.7019608, a: 1}
+  - m_Name: OldLace
+    m_Color: {r: 0.99215686, g: 0.9607843, b: 0.9019608, a: 1}
+  - m_Name: FloralWhite
+    m_Color: {r: 1, g: 0.98039216, b: 0.9411765, a: 1}
+  - m_Name: DarkGoldenrod
+    m_Color: {r: 0.72156864, g: 0.5254902, b: 0.043137256, a: 1}
+  - m_Name: Goldenrod
+    m_Color: {r: 0.85490197, g: 0.64705884, b: 0.1254902, a: 1}
+  - m_Name: Cornsilk
+    m_Color: {r: 1, g: 0.972549, b: 0.8627451, a: 1}
+  - m_Name: Gold
+    m_Color: {r: 1, g: 0.84313726, b: 0, a: 1}
+  - m_Name: Khaki
+    m_Color: {r: 0.9411765, g: 0.9019608, b: 0.54901963, a: 1}
+  - m_Name: LemonChiffon
+    m_Color: {r: 1, g: 0.98039216, b: 0.8039216, a: 1}
+  - m_Name: PaleGoldenrod
+    m_Color: {r: 0.93333334, g: 0.9098039, b: 0.6666667, a: 1}
+  - m_Name: DarkKhaki
+    m_Color: {r: 0.7411765, g: 0.7176471, b: 0.41960785, a: 1}
+  - m_Name: Beige
+    m_Color: {r: 0.9607843, g: 0.9607843, b: 0.8627451, a: 1}
+  - m_Name: LightGoldenodYellow
+    m_Color: {r: 0.98039216, g: 0.98039216, b: 0.8235294, a: 1}
+  - m_Name: Olive
+    m_Color: {r: 0.5019608, g: 0.5019608, b: 0, a: 1}
+  - m_Name: Yellow
+    m_Color: {r: 1, g: 1, b: 0, a: 1}
+  - m_Name: LightYellow
+    m_Color: {r: 1, g: 1, b: 0.8784314, a: 1}
+  - m_Name: Ivory
+    m_Color: {r: 1, g: 1, b: 0.9411765, a: 1}
+  - m_Name: Olivedrab
+    m_Color: {r: 0.41960785, g: 0.5568628, b: 0.13725491, a: 1}
+  - m_Name: YellowGreen
+    m_Color: {r: 0.6039216, g: 0.8039216, b: 0.19607843, a: 1}
+  - m_Name: DarkOliveGreen
+    m_Color: {r: 0.33333334, g: 0.41960785, b: 0.18431373, a: 1}
+  - m_Name: GreenYellow
+    m_Color: {r: 0.6784314, g: 1, b: 0.18431373, a: 1}
+  - m_Name: Chartreuse
+    m_Color: {r: 0.49803922, g: 1, b: 0, a: 1}
+  - m_Name: LawnGreen
+    m_Color: {r: 0.4862745, g: 0.9882353, b: 0, a: 1}
+  - m_Name: DarkSeaGreen
+    m_Color: {r: 0.56078434, g: 0.7372549, b: 0.56078434, a: 1}
+  - m_Name: ForestGreen
+    m_Color: {r: 0.13333334, g: 0.54509807, b: 0.13333334, a: 1}
+  - m_Name: LimeGreen
+    m_Color: {r: 0.19607843, g: 0.8039216, b: 0.19607843, a: 1}
+  - m_Name: LightGreen
+    m_Color: {r: 0.5647059, g: 0.93333334, b: 0.5647059, a: 1}
+  - m_Name: PaleGreen
+    m_Color: {r: 0.59607846, g: 0.9843137, b: 0.59607846, a: 1}
+  - m_Name: DarkGreen
+    m_Color: {r: 0, g: 0.39215687, b: 0, a: 1}
+  - m_Name: Green
+    m_Color: {r: 0, g: 0.5019608, b: 0, a: 1}
+  - m_Name: Lime
+    m_Color: {r: 0, g: 1, b: 0, a: 1}
+  - m_Name: Honeydew
+    m_Color: {r: 0.9411765, g: 1, b: 0.9411765, a: 1}
+  - m_Name: SeaGreen
+    m_Color: {r: 0.18039216, g: 0.54509807, b: 0.34117648, a: 1}
+  - m_Name: MediumSeaGreen
+    m_Color: {r: 0.23529412, g: 0.7019608, b: 0.44313726, a: 1}
+  - m_Name: SpringGreen
+    m_Color: {r: 0, g: 1, b: 0.49803922, a: 1}
+  - m_Name: Mintcream
+    m_Color: {r: 0.9607843, g: 1, b: 0.98039216, a: 1}
+  - m_Name: MediumSpringGreen
+    m_Color: {r: 0, g: 0.98039216, b: 0.6039216, a: 1}
+  - m_Name: MediumAquamarine
+    m_Color: {r: 0.4, g: 0.8039216, b: 0.6666667, a: 1}
+  - m_Name: Aquamarine
+    m_Color: {r: 0.49803922, g: 1, b: 0.83137256, a: 1}
+  - m_Name: Turquoise
+    m_Color: {r: 0.2509804, g: 0.8784314, b: 0.8156863, a: 1}
+  - m_Name: LightSeaGreen
+    m_Color: {r: 0.1254902, g: 0.69803923, b: 0.6666667, a: 1}
+  - m_Name: MediumTurquoise
+    m_Color: {r: 0.28235295, g: 0.81960785, b: 0.8, a: 1}
+  - m_Name: DarkSlateGray
+    m_Color: {r: 0.18431373, g: 0.30980393, b: 0.30980393, a: 1}
+  - m_Name: PaleTurquoise
+    m_Color: {r: 0.6862745, g: 0.93333334, b: 0.93333334, a: 1}
+  - m_Name: Teal
+    m_Color: {r: 0, g: 0.5019608, b: 0.5019608, a: 1}
+  - m_Name: DarkCyan
+    m_Color: {r: 0, g: 0.54509807, b: 0.54509807, a: 1}
+  - m_Name: Aqua
+    m_Color: {r: 0, g: 1, b: 1, a: 1}
+  - m_Name: Cyan
+    m_Color: {r: 0, g: 1, b: 1, a: 1}
+  - m_Name: LightCyan
+    m_Color: {r: 0.8784314, g: 1, b: 1, a: 1}
+  - m_Name: Azure
+    m_Color: {r: 0.9411765, g: 1, b: 1, a: 1}
+  - m_Name: DarkTurquoise
+    m_Color: {r: 0, g: 0.80784315, b: 0.81960785, a: 1}
+  - m_Name: CadetBlue
+    m_Color: {r: 0.37254903, g: 0.61960787, b: 0.627451, a: 1}
+  - m_Name: PowderBlue
+    m_Color: {r: 0.6901961, g: 0.8784314, b: 0.9019608, a: 1}
+  - m_Name: LightBlue
+    m_Color: {r: 0.6784314, g: 0.84705883, b: 0.9019608, a: 1}
+  - m_Name: DeepSkyBlue
+    m_Color: {r: 0, g: 0.7490196, b: 1, a: 1}
+  - m_Name: SkyBlue
+    m_Color: {r: 0.5294118, g: 0.80784315, b: 0.92156863, a: 1}
+  - m_Name: LightSkyBlue
+    m_Color: {r: 0.5294118, g: 0.80784315, b: 0.98039216, a: 1}
+  - m_Name: SteelBlue
+    m_Color: {r: 0.27450982, g: 0.50980395, b: 0.7058824, a: 1}
+  - m_Name: AliceBlue
+    m_Color: {r: 0.9411765, g: 0.972549, b: 1, a: 1}
+  - m_Name: DodgerBlue
+    m_Color: {r: 0.11764706, g: 0.5647059, b: 1, a: 1}
+  - m_Name: SlateGray
+    m_Color: {r: 0.4392157, g: 0.5019608, b: 0.5647059, a: 1}
+  - m_Name: LightSlateGray
+    m_Color: {r: 0.46666667, g: 0.53333336, b: 0.6, a: 1}
+  - m_Name: LightSteelBlue
+    m_Color: {r: 0.6901961, g: 0.76862746, b: 0.87058824, a: 1}
+  - m_Name: CornflowerBlue
+    m_Color: {r: 0.39215687, g: 0.58431375, b: 0.92941177, a: 1}
+  - m_Name: RoyalBlue
+    m_Color: {r: 0.25490198, g: 0.4117647, b: 0.88235295, a: 1}
+  - m_Name: MidnightBlue
+    m_Color: {r: 0.09803922, g: 0.09803922, b: 0.4392157, a: 1}
+  - m_Name: Lavender
+    m_Color: {r: 0.9019608, g: 0.9019608, b: 0.98039216, a: 1}
+  - m_Name: Navy
+    m_Color: {r: 0, g: 0, b: 0.5019608, a: 1}
+  - m_Name: DarkBlue
+    m_Color: {r: 0, g: 0, b: 0.54509807, a: 1}
+  - m_Name: MediumBlue
+    m_Color: {r: 0, g: 0, b: 0.8039216, a: 1}
+  - m_Name: Blue
+    m_Color: {r: 0, g: 0, b: 1, a: 1}
+  - m_Name: GhostWhite
+    m_Color: {r: 0.972549, g: 0.972549, b: 1, a: 1}
+  - m_Name: SlateBlue
+    m_Color: {r: 0.41568628, g: 0.3529412, b: 0.8039216, a: 1}
+  - m_Name: DarkSlateBlue
+    m_Color: {r: 0.28235295, g: 0.23921569, b: 0.54509807, a: 1}
+  - m_Name: MediumSlateBlue
+    m_Color: {r: 0.48235294, g: 0.40784314, b: 0.93333334, a: 1}
+  - m_Name: MediumPurple
+    m_Color: {r: 0.5764706, g: 0.4392157, b: 0.85882354, a: 1}
+  - m_Name: BlueViolet
+    m_Color: {r: 0.5411765, g: 0.16862746, b: 0.8862745, a: 1}
+  - m_Name: Indigo
+    m_Color: {r: 0.29411766, g: 0, b: 0.50980395, a: 1}
+  - m_Name: DarkOrchid
+    m_Color: {r: 0.6, g: 0.19607843, b: 0.8, a: 1}
+  - m_Name: DarkViolet
+    m_Color: {r: 0.5803922, g: 0, b: 0.827451, a: 1}
+  - m_Name: MediumOrchid
+    m_Color: {r: 0.7294118, g: 0.33333334, b: 0.827451, a: 1}
+  - m_Name: Thistle
+    m_Color: {r: 0.84705883, g: 0.7490196, b: 0.84705883, a: 1}
+  - m_Name: Plum
+    m_Color: {r: 0.8666667, g: 0.627451, b: 0.8666667, a: 1}
+  - m_Name: Violet
+    m_Color: {r: 0.93333334, g: 0.50980395, b: 0.93333334, a: 1}
+  - m_Name: Purple
+    m_Color: {r: 0.5019608, g: 0, b: 0.5019608, a: 1}
+  - m_Name: DarkMagenta
+    m_Color: {r: 0.54509807, g: 0, b: 0.54509807, a: 1}
+  - m_Name: Magenta
+    m_Color: {r: 1, g: 0, b: 1, a: 1}
+  - m_Name: Fuchsia
+    m_Color: {r: 1, g: 0, b: 1, a: 1}
+  - m_Name: Orchid
+    m_Color: {r: 0.85490197, g: 0.4392157, b: 0.8392157, a: 1}
+  - m_Name: MediumVioletRed
+    m_Color: {r: 0.78039217, g: 0.08235294, b: 0.52156866, a: 1}
+  - m_Name: DeepPink
+    m_Color: {r: 1, g: 0.078431375, b: 0.5764706, a: 1}
+  - m_Name: HotPink
+    m_Color: {r: 1, g: 0.4117647, b: 0.7058824, a: 1}
+  - m_Name: Lavenderblush
+    m_Color: {r: 1, g: 0.9411765, b: 0.9607843, a: 1}
+  - m_Name: PaleVioletred
+    m_Color: {r: 0.85882354, g: 0.4392157, b: 0.5764706, a: 1}
+  - m_Name: Crimson
+    m_Color: {r: 0.8627451, g: 0.078431375, b: 0.23529412, a: 1}
+  - m_Name: Pink
+    m_Color: {r: 1, g: 0.7529412, b: 0.79607844, a: 1}
+  - m_Name: LightPink
+    m_Color: {r: 1, g: 0.7137255, b: 0.75686276, a: 1}
