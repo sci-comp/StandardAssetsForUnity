@@ -51,12 +51,12 @@ public class UIWindow : MonoBehaviour
         {
             closeButton.onClick.AddListener(OnCloseButtonClicked);
         }
+
+        eventSystem = EventSystem.current;
     }
 
     virtual protected void Start()
     {
-        eventSystem = EventSystem.current;
-
         RefreshSelectables();
 
         LastSelected = firstSelected != null ? firstSelected : Selectables[0];
@@ -81,6 +81,7 @@ public class UIWindow : MonoBehaviour
         }
         else if (firstSelected != null)
         {
+
             eventSystem.SetSelectedGameObject(firstSelected.gameObject);
         }
         else
@@ -120,19 +121,17 @@ public class UIWindow : MonoBehaviour
 
     public void EnableWindow()
     {
-        StartCoroutine(EnableAfterFadeIn());
+        gameObject.SetActive(true);
+        animator.SetTrigger(enableAnimatorHash);
+        windowManager.RegisterWindow(this);
     }
 
     public void DisableWindow()
     {
-        StartCoroutine(DisableAfterFadeOut());
-    }
-
-    private IEnumerator EnableAfterFadeIn()
-    {
-        animator.SetTrigger(enableAnimatorHash);
-        yield return new WaitForSeconds(fadeDuration);
-        windowManager.RegisterWindow(this);
+        if (gameObject.activeSelf)
+        {
+            StartCoroutine(DisableAfterFadeOut());
+        }
     }
 
     private IEnumerator DisableAfterFadeOut()
