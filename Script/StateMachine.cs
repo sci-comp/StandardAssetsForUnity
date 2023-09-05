@@ -11,26 +11,26 @@ namespace Toolbox
 	/// </summary>
     public class StateMachine<T>
 	{
-		public T CurrentState { get; private set; }
-		public T PreviousState { get; private set; }
+		public T Current { get; private set; }
+		public T Previous { get; private set; }
 
 		public event Action OnStateChange;
 
         public StateMachine(T initialState)
         {
-            CurrentState = initialState;
-            PreviousState = initialState;
+            Current = initialState;
+            Previous = initialState;
         }
 
         public void ChangeState(T newState)
 		{
-			if (EqualityComparer<T>.Default.Equals(newState, CurrentState))
+			if (EqualityComparer<T>.Default.Equals(newState, Current))
 			{
 				return;
 			}
 
-			PreviousState = CurrentState;
-			CurrentState = newState;
+			Previous = Current;
+			Current = newState;
 			OnStateChange?.Invoke();
 		}
 	}

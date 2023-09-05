@@ -24,6 +24,7 @@ namespace Toolbox
                         var singletonObject = new GameObject();
                         instance = singletonObject.AddComponent<T>();
                         singletonObject.name = typeof(T).Name;
+                        Debug.Log("Creating singleton: " + singletonObject.name);
                     }
                 }
 
@@ -32,11 +33,6 @@ namespace Toolbox
         }
 
         protected virtual void Awake()
-        {
-            InitializeSingleton();
-        }
-
-        protected virtual void InitializeSingleton()
         {
             if (!Application.isPlaying)
             {
@@ -58,5 +54,6 @@ namespace Toolbox
             }
         }
     }
+
 }
 
