@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,12 +7,13 @@ public class SoundGroup : MonoBehaviour
     public delegate void AudioSourceStoppedHandler(SoundGroup soundGroup);
     public event AudioSourceStoppedHandler OnAudioSourceStopped;
 
-    [SerializeField] List<AudioSource> audioSources;
-    [SerializeField] Vector2 varyPitch = new Vector2(-0.05f, 0.05f);
-    [SerializeField] Vector2 varyVolume = new Vector2(0.93f, 1.0f);
-    [SerializeField] SoundBUS soundBUS = SoundBUS.SFX;
     [SerializeField] bool use3DSound = false;
+    [SerializeField] Vector2 varyPitch = new(-0.05f, 0.05f);
+    [SerializeField] Vector2 varyVolume = new(0.93f, 1.0f);
+    [SerializeField] SoundBUS soundBUS = SoundBUS.SFX;
+    [SerializeField] List<AudioSource> audioSources;
 
+    public List<AudioSource> AudioSources => audioSources;
     public SoundBUS SoundBUS => soundBUS;
     public bool Use3DSound => use3DSound;
 
@@ -22,8 +22,8 @@ public class SoundGroup : MonoBehaviour
 
     private void Start()
     {
-        availableSources = new Queue<AudioSource>(audioSources);
-        activeSources = new List<AudioSource>();
+        availableSources = new(audioSources);
+        activeSources = new();
     }
 
     public AudioSource GetAvailableSource()
@@ -50,8 +50,8 @@ public class SoundGroup : MonoBehaviour
             return null;
         }
 
-        src.pitch = UnityEngine.Random.Range(varyPitch.x, varyPitch.y);
-        src.volume = UnityEngine.Random.Range(varyVolume.x, varyVolume.y);
+        src.pitch = Random.Range(varyPitch.x, varyPitch.y);
+        src.volume = Random.Range(varyVolume.x, varyVolume.y);
 
         StartCoroutine(WaitForAudioToEnd(src));
 
@@ -70,4 +70,6 @@ public class SoundGroup : MonoBehaviour
 
         OnAudioSourceStopped?.Invoke(this);
     }
+
 }
+

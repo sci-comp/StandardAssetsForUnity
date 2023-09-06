@@ -13,33 +13,29 @@ public enum SoundBUS
 
 public class SoundManager : Singleton<SoundManager>
 {
-    private Dictionary<SoundBUS, int> activeVoiceCounts;
-    private Dictionary<SoundBUS, int> busVoiceLimit;
-    private Dictionary<string, SoundGroup> soundGroupMap;
+    private readonly Dictionary<SoundBUS, int> activeVoiceCounts = new();
+    private readonly Dictionary<SoundBUS, int> busVoiceLimit = new()
+    {
+        {SoundBUS.Ambient, 3 },
+        {SoundBUS.Environment, 1},
+        {SoundBUS.SFX, 10},
+        {SoundBUS.UI, 5},
+        {SoundBUS.Voice, 2}
+    };
+    private readonly Dictionary<string, SoundGroup> soundGroups = new();
 
     private void Start()
-    {
-        activeVoiceCounts = new Dictionary<SoundBUS, int>();
-        soundGroupMap = new Dictionary<string, SoundGroup>();
-        busVoiceLimit = new Dictionary<SoundBUS, int>
-        {
-            {SoundBUS.Ambient, 5},
-            {SoundBUS.Environment, 3},
-            {SoundBUS.SFX, 10},
-            {SoundBUS.UI, 5},
-            {SoundBUS.Voice, 2}
-        };
-
+    {    
         foreach (SoundBUS bus in busVoiceLimit.Keys)
         {
             activeVoiceCounts[bus] = 0;
         }
 
-        SoundGroup[] soundGroups = GetComponentsInChildren<SoundGroup>();
+        SoundGroup[] _soundGroups = GetComponentsInChildren<SoundGroup>();
 
-        foreach (SoundGroup sg in soundGroups)
+        foreach (SoundGroup soundGroup in _soundGroups)
         {
-            soundGroupMap[sg.gameObject.name] = sg;
+            soundGroups[soundGroup.gameObject.name] = soundGroup;
         }
     }
 
@@ -55,7 +51,7 @@ public class SoundManager : Singleton<SoundManager>
 
     private void PlaySoundInternal(string soundGroupName, Transform location)
     {
-        if (soundGroupMap.TryGetValue(soundGroupName, out SoundGroup soundGroup))
+        if (soundGroups.TryGetValue(soundGroupName, out SoundGroup soundGroup))
         {
             SoundBUS bus = soundGroup.SoundBUS;
             if (activeVoiceCounts[bus] >= busVoiceLimit[bus])
@@ -85,4 +81,21 @@ public class SoundManager : Singleton<SoundManager>
         activeVoiceCounts[bus]--;
         soundGroup.OnAudioSourceStopped -= HandleAudioSourceStopped;
     }
+
+    public void SetBusVolume(SoundBUS bus, float volume)
+    {
+        foreach (var pair in soundGroups)
+        {
+            SoundGroup soundGroup = pair.Value;
+            if (soundGroup.SoundBUS == bus)
+            {
+                foreach (AudioSource source in soundGroup.AudioSources)
+                {
+                    source.volume = volume;
+                }
+            }
+        }
+    }
+
 }
+
