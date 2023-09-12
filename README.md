@@ -6,21 +6,9 @@ These are standard assets that I include in most of my projects. Though this pac
 
 ### Required Dependency
 
-#### Unity Tweens
-
-I do not include Unity Tweens since it's still actively maintained by the original creator. Please get the latest version of Unity Tweens here: [link](https://github.com/jeffreylanters/unity-tweens)
-
-Since Unity Tweens is MIT licensed, popular, and actively maintained, I do not see a reason to let this be an optional dependency.
-
 ### Optional Dependencies
 
 These are proprietary assets that I currently use. Many users do not like proprietary assets, so I have included instruction here on how to remove these dependencies. However, by default, this StandardAssets package assumes these dependencies have already been included.
-
-#### Dialogue System for Unity
-
-Direcory StandardAssets/Script/Savers includes saver components. In order to remove dependency on the Dialogue System for Unity, remove this directory.
-
-- Dialogue System for Unity [link](https://assetstore.unity.com/packages/tools/behavior-ai/dialogue-system-for-unity-11672)
 
 #### MicroSplat
 
